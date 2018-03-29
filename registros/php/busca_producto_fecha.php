@@ -5,6 +5,8 @@ $desde = $_POST['desde'];
 $hasta = $_POST['hasta'];
 
 //COMPROBAMOS QUE LAS FECHAS EXISTAN
+if ($desde!=0 && $hasta!=0) {
+
 if(isset($desde)==false){
 	$desde = $hasta;
 }
@@ -12,10 +14,14 @@ if(isset($desde)==false){
 if(isset($hasta)==false){
 	$hasta = $desde;
 }
+$registro = mysql_query("SELECT personas.idPersonas, personas.Cedula, personas.Nombres, cursos.NombreCurso, personas_has_cursos.Fecha FROM personas LEFT JOIN personas_has_cursos ON personas_has_cursos.idPersonas=personas.idPersonas LEFT JOIN cursos ON cursos.idCursos= personas_has_cursos.idCursos WHERE personas.cursoslibres='1' AND personas.aceptado='S' AND personas_has_cursos.Fecha BETWEEN '$desde' AND '$hasta' ORDER BY idPersonas ASC");
 
+}else{
+$registro = mysql_query("SELECT personas.idPersonas, personas.Cedula, personas.Nombres, cursos.NombreCurso, personas_has_cursos.Fecha FROM personas LEFT JOIN personas_has_cursos ON personas_has_cursos.idPersonas=personas.idPersonas LEFT JOIN cursos ON cursos.idCursos= personas_has_cursos.idCursos WHERE personas.cursoslibres='1' AND personas.aceptado='S' ORDER BY idPersonas ASC");
+
+}
 //EJECUTAMOS LA CONSULTA DE BUSQUEDA
 
-$registro = mysql_query("SELECT personas.idPersonas, personas.Cedula, personas.Nombres, cursos.NombreCurso, personas_has_cursos.Fecha FROM personas LEFT JOIN personas_has_cursos ON personas_has_cursos.idPersonas=personas.idPersonas LEFT JOIN cursos ON cursos.idCursos= personas_has_cursos.idCursos WHERE personas.cursoslibres='1' AND personas.aceptado='S' AND personas_has_cursos.Fecha BETWEEN '$desde' AND '$hasta' ORDER BY idPersonas ASC");
 
 //CREAMOS NUESTRA VISTA Y LA DEVOLVEMOS AL AJAX
 

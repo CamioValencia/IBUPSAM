@@ -14,7 +14,7 @@
 <script src="../bootstrap/js/bootstrap.js"></script>
 </head>
 
-<body>
+<body id="body">
     <header>ABARROTES "PHP & JQuery"</header>
     <section>
     <table border="0" align="center">
@@ -27,7 +27,7 @@
             <td width="200"><a target="_blank" href="javascript:reportePDF();" class="btn btn-danger">Exportar Busqueda a PDF</a></td>
         </tr>
 
-        
+
 
 
     </table>
@@ -37,6 +37,9 @@
     <center>
         <ul class="pagination" id="pagination"></ul>
     </center>
+
+
+
     <!-- MODAL PARA EL REGISTRO DE PRODUCTOS-->
     <div class="modal fade" id="registra-producto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -83,7 +86,7 @@
                     </tr>
                 </table>
             </div>
-            
+
             <div class="modal-footer">
             	<input type="submit" value="Registrar" class="btn btn-success" id="reg"/>
                 <input type="submit" value="Editar" class="btn btn-warning"  id="edi"/>
@@ -92,7 +95,7 @@
           </div>
         </div>
       </div>
-      
+
 
 </body>
 </html>

@@ -1,5 +1,21 @@
 $(document).ready(pagination(1));
 $(function(){
+
+$('#body').on('ready', function(){
+		var desde = 0;
+		var hasta = 0;
+		var url = '../php/busca_producto_fecha.php';
+		$.ajax({
+		type:'POST',
+		url:url,
+		data:'desde='+desde+'&hasta='+hasta,
+		success: function(datos){
+			$('#agrega-registros').html(datos);
+		}
+	});
+	return false;
+	});
+
 	$('#bd-desde').on('change', function(){
 		var desde = $('#bd-desde').val();
 		var hasta = $('#bd-hasta').val();
@@ -14,7 +30,7 @@ $(function(){
 	});
 	return false;
 	});
-	
+
 	$('#bd-hasta').on('change', function(){
 		var desde = $('#bd-desde').val();
 		var hasta = $('#bd-hasta').val();
@@ -29,7 +45,7 @@ $(function(){
 	});
 	return false;
 	});
-	
+
 	$('#nuevo-producto').on('click',function(){
 		$('#formulario')[0].reset();
 		$('#pro').val('Registro');
@@ -40,7 +56,7 @@ $(function(){
 			backdrop:'static'
 		});
 	});
-	
+
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
 		var url = '../php/busca_producto.php';
@@ -54,7 +70,7 @@ $(function(){
 	});
 	return false;
 	});
-	
+
 });
 
 function agregaRegistro(){
