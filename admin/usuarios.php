@@ -117,12 +117,8 @@ body {
         <div class="row">
            
             <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO TECNICOS" href="cuentas/cuentas.php" ><img class="img-circle img-responsive img-center" src="../img/personaa.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Editar usuario </h3>                             
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO Usuarios" href="cuentas/crear_usuario.php" ><img class="img-circle img-responsive img-center" src="../img/persona.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Registro usuarios </h3>                             
+                <a title="REGISTRO Usuarios" href="cuentas2/index.php" ><img class="img-circle img-responsive img-center" src="../img/persona.png" alt="" style="width: 253px; height: 222px;"></a>
+                <h3>Gestión de usuarios</h3>                             
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
                 <a title="REGISTRO Usuarios" href="./cursoslibres/crearcurso.php" ><img class="img-circle img-responsive img-center" src="../img/registro.png" alt="" style="width: 253px; height: 222px;"></a>

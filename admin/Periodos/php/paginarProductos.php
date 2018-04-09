@@ -3,7 +3,7 @@
 	$paginaActual = $_POST['partida'];
 
     $nroProductos = mysql_num_rows(mysql_query("SELECT personas.idPersonas, personas.Cedula, personas.Nombres, cursos.NombreCurso, personas_has_cursos.Fecha FROM personas LEFT JOIN personas_has_cursos ON personas_has_cursos.idPersonas=personas.idPersonas LEFT JOIN cursos ON cursos.idCursos= personas_has_cursos.idCursos WHERE personas.cursoslibres='1' AND personas.aceptado='S'"));
-    $nroLotes = 1;
+    $nroLotes = 4;
     $nroPaginas = ceil($nroProductos/$nroLotes);
     $lista = '';
     $tabla = '';
@@ -28,6 +28,9 @@
   		$limit = $nroLotes*($paginaActual-1);
   	}
 
+
+
+
   	$registro = mysql_query("SELECT personas.idPersonas, personas.Cedula, personas.Nombres, cursos.NombreCurso, personas_has_cursos.Fecha FROM personas LEFT JOIN personas_has_cursos ON personas_has_cursos.idPersonas=personas.idPersonas LEFT JOIN cursos ON cursos.idCursos= personas_has_cursos.idCursos WHERE personas.cursoslibres='1' AND personas.aceptado='S' LIMIT $limit, $nroLotes ");
 
 
@@ -38,7 +41,7 @@
 			                <th width="150">Precio Unitario</th>
 			                <th width="150">Precio Distribuidor</th>
 			                <th width="150">Fecha Registro</th>
-			                <th width="50">Opciones</th>
+			              
 			            </tr>';
 				
 	while($registro2 = mysql_fetch_array($registro)){
@@ -48,7 +51,7 @@
 							<td>S/. '.$registro2['Nombres'].'</td>
 							<td>S/. '.$registro2['NombreCurso'].'</td>
 							<td>'.fechaNormal($registro2['Fecha']).'</td>
-							<td><a href="javascript:editarProducto('.$registro2['idPersonas'].');" class="glyphicon glyphicon-edit"></a> <a href="javascript:eliminarProducto('.$registro2['idPersonas'].');" class="glyphicon glyphicon-remove-circle"></a></td>
+						
 						  </tr>';		
 	}
         
