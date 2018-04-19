@@ -12,7 +12,9 @@ $datos = array(
 
 				0 => $valores2['Nombres'], 
 				1 => $valores2['Parentesco'], 
-				2 => $valores2['idFamiliar'], 
+				2 => $valores2['idFamiliar'],
+				3 => $valores2['Nombres'],
+
 				
 				
 				

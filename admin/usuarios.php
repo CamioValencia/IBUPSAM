@@ -121,23 +121,15 @@ body {
                 <h3>Gestión de usuarios</h3>                             
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO Usuarios" href="./cursoslibres/crearcurso.php" ><img class="img-circle img-responsive img-center" src="../img/registro.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Registro de cursos libres </h3>                             
-            </div>
-            <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO Usuarios" href="./cursoslibres/vercursos.php" ><img class="img-circle img-responsive img-center" src="../img/editar.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Ver cursos libres registrados </h3>                             
+                <a title="Gestión de cursos libres" href="./cursoslibres2" ><img class="img-circle img-responsive img-center" src="../img/editar.png" alt="" style="width: 253px; height: 222px;"></a>
+                <h3>Gestión de cursos libres </h3>                             
             </div>
 
             <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO Usuarios" href="./eps/creareps.php" ><img class="img-circle img-responsive img-center" src="../img/inscribete.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Añadir una nueva eps </h3>                             
+                <a title="Gestión de EPS" href="./eps2" ><img class="img-circle img-responsive img-center" src="../img/inscribete.png" alt="" style="width: 253px; height: 222px;"></a>
+                <h3>Gestion de EPS </h3>                             
             </div>
 
-            <div class="col-lg-4 col-sm-6 text-center">
-                <a title="REGISTRO Usuarios" href="./eps/vereps.php" ><img class="img-circle img-responsive img-center" src="../img/editar.png" alt="" style="width: 253px; height: 222px;"></a>
-                <h3>Modificar eps </h3>                             
-            </div>
             
         </div>
 

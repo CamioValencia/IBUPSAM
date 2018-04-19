@@ -4,7 +4,7 @@ $(function(){
 $('#body').on('ready', function(){
 		var desde = 0;
 		var hasta = 0;
-		var url = '../../admin/Pre-inscripciones2/php/busca_producto_fecha.php';
+		var url = '../../admin/cursoslibres2/php/busca_producto_fecha.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -19,7 +19,7 @@ $('#body').on('ready', function(){
 	$('#bd-desde').on('change', function(){
 		var desde = $('#bd-desde').val();
 		var hasta = $('#bd-hasta').val();
-		var url = '../../admin/Pre-inscripciones2/php/busca_producto_fecha.php';
+		var url = '../../admin/cursoslibres2/php/busca_producto_fecha.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -59,7 +59,7 @@ $('#body').on('ready', function(){
 
 	$('#bs-prod').on('keyup',function(){
 		var dato = $('#bs-prod').val();
-		var url = '../../admin/Pre-inscripciones2/php/busca_usuario.php';
+		var url = '../../admin/cursoslibres2/php/busca_curso.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -74,7 +74,7 @@ $('#body').on('ready', function(){
 });
 
 function agregaRegistro(){
-	var url = '../../admin/Pre-inscripciones2/php/agrega_usuario.php';
+	var url = '../../admin/cursoslibres2/php/agrega_curso.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -97,7 +97,7 @@ function agregaRegistro(){
 
 
 function eliminarProducto(id){
-	var url = '../../admin/cuentas2/php/elimina_usuario.php';
+	var url = '../../admin/cursoslibres2/php/elimina_curso.php';
 	var pregunta = confirm('¿Esta seguro de eliminar este Producto?');
 	if(pregunta==true){
 		$.ajax({
@@ -117,7 +117,7 @@ function eliminarProducto(id){
 
 function editarProducto(id){
 	$('#formulario')[0].reset();
-	var url = '../../admin/Pre-inscripciones2/php/edita_usuario.php';
+	var url = '../../admin/cursoslibres2/php/edita_curso.php';
 		$.ajax({
 		type:'POST',
 		url:url,
@@ -144,7 +144,7 @@ function editarProducto(id){
 
 
 function pagination(partida){
-	var url = '../../admin/Pre-inscripciones2/php/paginarusuario.php';
+	var url = '../../admin/cursoslibres2/php/paginarcurso.php';
 	$.ajax({
 		type:'POST',
 		url:url,
@@ -157,3 +157,21 @@ function pagination(partida){
 	});
 	return false;
 }
+
+function addInput() {
+    var fila = '<fieldset id="field">';
+    fila += '<div class="form-group col-md-4"><select name="Dia[]" id="Dia" class="form-control"> <option>Seleccione una Opci&oacuten...</option><option value="LUNES">Lunes</option><option value="MARTES">Martes</option><option value="MIERCOLES">Miercoles</option><option value="JUEVES">Jueves</option><option value="VIERNES">Viernes</option><option value="SABADO">Sabado</option></select></div>';
+    fila += '<div class="form-group col-md-3"><input type="time" class="form-control" id="Horaini"   name="Horaini[]" ></div>';
+    fila += '<div class="form-group col-md-3"><input type="time" class="form-control" id="Horafin"   name="Horafin[]" ></div>';
+    fila += '<input type="button" name="X_0" value="X" class="btn btn-default" onclick="removeInput(this);">';
+    fila += '</fieldset>';
+    $('#insertar').append(fila);
+}
+
+function removeInput( el ) {
+        $(el).parent().remove();
+}
+
+
+
+

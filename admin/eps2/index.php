@@ -1,22 +1,3 @@
-<?php
-session_start();
-?>
-
-<?php
-if(isset($_SESSION['usuarios'])){
-    if($_SESSION['privilegio']=='1'){
-
-?>
-
-<?php
-    if (!isset($_SESSION['usuarios'])){
-    
-?>
-
-<?php
-} else{
-?> 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -25,7 +6,7 @@ if(isset($_SESSION['usuarios'])){
 <title>Universidad Piloto de Colombia S.A.M.</title>
 <link href="../../css/estilo.css" rel="stylesheet">
 <script src="../../js/jquery.js"></script>
-<script src="../../js/myjava2.js"></script>
+<script src="../../js/eps.js"></script>
 <script src="../../css/bootstrap/js/bootstrap.min1.js"></script>
 <script src="../../css/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../css/bootstrap/js/bootstrap.js"></script>
@@ -117,14 +98,13 @@ body {
         </div>
         <!-- /.container -->
     </nav>
-    <header>Personas pre-inscritas</header>
+    <header>Cuentas de usuario</header>
     <section>
     <table  border="0" align="center">
-
-
+      
     	<tr>
-          <td width="335"><input type="text" class="form-control input-md" placeholder="Buscar por Cedula" id="bs-prod"/></td>
-    
+          <td width="335"><input type="text" placeholder="Busca nombre de usuario" id="bs-prod"/></td>
+          <td width="100"><button id="nuevo-producto" class="btn btn-primary">Nuevo</button></td>
          
         </tr>
 
@@ -132,26 +112,22 @@ body {
 
 
     </table>
-
     </section>
-    <div class="table-responsive" >
-    <div class="registros1" id="agrega-registros" method="POST" action="../CRUDpersonas.php"></div>
-    
-      </div>
+
+    <div class="registros" id="agrega-registros"></div>
     <center>
         <ul class="pagination" id="pagination"></ul>
     </center>
-    
 
 
 
     <!-- MODAL PARA EL REGISTRO DE PRODUCTOS-->
-    <div class="modal fade" id="registra-producto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+   <div class="modal fade" id="registra-producto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content" style="background-image: url(../../img/fondo.png)">
             <div class="modal-header">
-              <button  type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id="myModalLabel"><b>Registra un Producto</b></h4>
+              <button onclick=" window.location.reload()" type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id="myModalLabel"><b>Registra una EPS</b></h4>
             </div>
             <form id="formulario" class="formulario" onsubmit="return agregaRegistro();">
 
@@ -161,18 +137,14 @@ body {
             <input id="pro" name="pro"  type="hidden">
            
            
-           <div class="modal-body" id="Cedula1">         
-           <label for="exampleInputEmail1"><b>Cedula(*):</b></label>
-            <input type="number" class="form-control" id="idFamiliar" name="idFamiliar" >
+           <input  id="idseguro" name="idseguro" type="hidden">
+
+           <div class="modal-body">         
+           <label for="exampleInputEmail1"><b>Nombre de la eps:</b></label>
+            <input type="text" class="form-control" id="nombre_seguro" name="nombre_seguro" >
            </div>
-           <div class="modal-body" id="Nombres1">
-            <label for="exampleInputEmail1"><b>Nombres(*):</b></label>
-            <input type="text" class="form-control" id="Nombres"   name="Nombres" >
-           </div>
-           <div class="modal-body" id="FechaNac1">
-            <label for="exampleInputEmail1"><b>Fecha de Nacimiento(*):</b></label>
-            <input type="text" class="form-control" id="Parentesco" name="Parentesco" >
-           </div>
+
+           
            
 
            <div class="modal-footer">
@@ -182,8 +154,8 @@ body {
            </div>
 
 
-                    	<td colspan="2">
-                        	<div id="mensaje"></div>
+                      <td colspan="2">
+                          <div id="mensaje"></div>
                         </td>
                     </tr>
                 </table>
@@ -197,26 +169,3 @@ body {
 
 </body>
 </html>
-
-<?php
-}
-?>
-
-<?php
-}else{
-
-    echo '<script type="text/javascript">
-    alert("No tienes los suficientes privilegios para estar aquí");
-    window.location.href="../../login.html";
-    </script>';
-
-}
-
-
-}else{
-    echo '<script type="text/javascript">
-    window.location.href="../../login.html";
-    </script>';
-
-}
-?>

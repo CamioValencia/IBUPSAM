@@ -84,7 +84,7 @@
                 </select></td>
 
         
-        
+         <td><a href="javascript:editarProducto('.$registro2['idPersonas'].');" class="glyphicon glyphicon-edit"></a></td>
         
         <td><input  id="cedula" name="idPersonas[]" type="hidden" value='.$registro2['idPersonas'].'></td>
 
